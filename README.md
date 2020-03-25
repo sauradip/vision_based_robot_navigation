@@ -24,3 +24,14 @@ We have implemented our algorithm using [Multitask RefineNet](https://github.com
 </p>
 
 The module is very important in the navigation of the robot. It takes computer vision output and takes decision intelligently and pass it on to the robot hardwares to move the robot. The free space map is divided into 3 sections based on the measurement given in the figure above. These are empirically taken as robot width varies. The image is subdivided in such a measured manner as the robot might have to pass through a doorway or a lobby but if the width is not fitting the robot then it might get stuck. The 3 parts of the image contains binary values 0 and 1. If any obstacle is detected, then the free space map will shrink which implies more 0 values than 1. Hence if in any of the three sections if we have more 0 values than 1 then that section has obstacles. Hence the robot will take decision to turn away from that and vice versa. These controls are passed on to the robot via "Twist" package and implemented via ROS and pyros wrapper for python. 
+
+# References 
+
+If you find this code useful in your research, please consider citing:
+
+> @inproceedings{nag2020s,
+  title={Vision based robot navigation},
+  author={Nag, Sauradip},
+  year={2019},
+  organization={GitHub}
+}
